@@ -1817,7 +1817,7 @@
     .gitem-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 212, 255, 0.15) 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
       opacity: 0;
       transition: opacity 0.3s;
       display: flex;
@@ -1852,16 +1852,18 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--cyan);
+      color: #ffffff;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     }
 
     .gitem-overlay-desc {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.45;
       font-weight: 400;
       letter-spacing: 0;
       text-transform: none;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
     .lb-desc {
@@ -2348,7 +2350,7 @@
 
       .gitem .gitem-overlay {
         opacity: 1;
-        background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);
+        background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
       }
 
       .gitem-overlay-desc {
