@@ -1,0 +1,3367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilal Tabreed | تبريد بلال - الرياض</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #080e17;
+      --bg2: #0d1520;
+      --bg3: #111d2e;
+      --cyan: #00d4ff;
+      --cyan2: #0099cc;
+      --orange: #ff6b1a;
+      --white: #ffffff;
+      --text: #ffffff;
+      --gray: #8a9ab0;
+      --border: rgba(0, 212, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.03);
+      --nav-bg: rgba(8, 14, 23, 0.95);
+      --mob-bg: rgba(8, 14, 23, 0.98);
+      --footer-bg: #040810;
+      --input-bg: rgba(255, 255, 255, 0.04);
+      --input-border: rgba(255, 255, 255, 0.1);
+      --input-ph: rgba(255, 255, 255, 0.22);
+      --select-bg: #0d1520;
+      --footer-border: rgba(255, 255, 255, 0.05);
+      --footer-copy: rgba(255, 255, 255, 0.2);
+      --r: 16px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ── LIGHT MODE ── */
+    body.light {
+      --bg: #f2f7fd;
+      --bg2: #daeaf8;
+      --bg3: #c8dbf0;
+      --cyan: #0088bb;
+      --cyan2: #006699;
+      --orange: #d94f00;
+      --white: #091829;
+      --text: #091829;
+      --gray: #3a566e;
+      --border: rgba(0, 100, 180, 0.22);
+      --card: #ffffff;
+      --nav-bg: rgba(242, 247, 253, 0.97);
+      --mob-bg: rgba(242, 247, 253, 0.99);
+      --footer-bg: #bed2e8;
+      --input-bg: #ffffff;
+      --input-border: rgba(0, 100, 180, 0.3);
+      --input-ph: rgba(9, 24, 41, 0.38);
+      --select-bg: #eef4fb;
+      --footer-border: rgba(0, 0, 0, 0.12);
+      --footer-copy: rgba(9, 24, 41, 0.45);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    body.ar {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      direction: rtl;
+    }
+
+    /* NAVBAR */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+      flex-shrink: 0;
+    }
+
+    .logo-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      line-height: 1;
+      transition: color 0.4s;
+    }
+
+    body.ar .logo-name {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 18px;
+    }
+
+    .logo-tagline {
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-pill {
+      display: flex;
+      background: var(--bg3);
+      border-radius: 30px;
+      padding: 3px;
+      border: 1px solid var(--border);
+    }
+
+    .lbtn {
+      padding: 5px 13px;
+      border-radius: 24px;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: transparent;
+      color: var(--gray);
+      transition: all 0.25s;
+    }
+
+    .lbtn.on {
+      background: var(--cyan);
+      color: var(--bg);
+    }
+
+    .cta-call {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--orange);
+      color: var(--white);
+      padding: 9px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(255, 107, 26, 0.4);
+      transition: all 0.3s var(--ease);
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+
+    .cta-call:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 107, 26, 0.55);
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 190;
+      background: var(--mob-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 5% 28px;
+      transform: translateY(-110%);
+      transition: transform 0.35s var(--ease), background 0.4s;
+    }
+
+    .mobile-menu.open {
+      transform: translateY(0);
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .mobile-menu ul a {
+      display: block;
+      padding: 12px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu ul a:hover {
+      color: var(--cyan);
+    }
+
+    .mobile-bottom {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 212, 255, 0.08);
+      top: -100px;
+      right: -100px;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 107, 26, 0.06);
+      bottom: -50px;
+      left: 10%;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      background: rgba(0, 212, 255, 0.07);
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 28px;
+      animation: rise 0.7s var(--ease) both;
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: blink 1.4s ease infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .hero-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(56px, 7vw, 96px);
+      font-weight: 900;
+      line-height: 0.93;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: rise 0.7s 0.08s var(--ease) both;
+    }
+
+    body.ar .hero-h1 {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: clamp(38px, 5.5vw, 68px);
+      line-height: 1.15;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .hero-h1 .line2 {
+      color: var(--cyan);
+      display: block;
+    }
+
+    .hero-h1 .line3 {
+      color: var(--orange);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--gray);
+      max-width: 430px;
+      margin-bottom: 40px;
+      animation: rise 0.7s 0.16s var(--ease) both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: rise 0.7s 0.24s var(--ease) both;
+    }
+
+    .btn-a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--cyan);
+      color: var(--bg);
+      padding: 15px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(0, 212, 255, 0.3);
+      transition: all 0.3s var(--ease);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.45);
+    }
+
+    .btn-b {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #25d366;
+      color: var(--white);
+      padding: 15px 26px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s var(--ease);
+    }
+
+    .btn-b:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
+    }
+
+    .hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      animation: rise 0.8s 0.1s var(--ease) both;
+    }
+
+    .hcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 20px;
+      transition: all 0.35s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hcard::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .hcard:hover {
+      background: rgba(0, 212, 255, 0.05);
+      border-color: rgba(0, 212, 255, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .hcard:hover::after {
+      opacity: 1;
+    }
+
+    .hcard-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .hcard-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--cyan);
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    body.ar .hcard-num {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+    }
+
+    .hcard-lbl {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .hcard.span2 {
+      grid-column: 1/-1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .hcard.span2 .hcard-right {
+      text-align: right;
+    }
+
+    body.ar .hcard.span2 .hcard-right {
+      text-align: left;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(28px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* WRAP */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    /* SECTION LABELS */
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+    }
+
+    .sec-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--cyan);
+      border-radius: 2px;
+    }
+
+    body.ar .sec-label {
+      flex-direction: row-reverse;
+    }
+
+    body.ar .sec-label::before {
+      display: none;
+    }
+
+    body.ar .sec-label::after {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--cyan);
+      border-radius: 2px;
+    }
+
+    .sec-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    body.ar .sec-title {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.15;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .sec-sub {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: 500px;
+      margin-bottom: 56px;
+    }
+
+    /* MARQUEE STRIP */
+    .strip {
+      background: var(--cyan);
+      color: var(--bg);
+      padding: 18px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .strip-inner {
+      display: inline-flex;
+      animation: marquee 22s linear infinite;
+    }
+
+    .strip-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .strip-item::after {
+      content: '✦';
+      font-size: 10px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* SERVICES */
+
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .svc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px 22px;
+      transition: all 0.35s var(--ease);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .svc::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .svc:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .svc:hover::before {
+      opacity: 1;
+    }
+
+    .svc-emoji {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 153, 204, 0.06));
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: all 0.35s var(--ease);
+    }
+
+    .svc-emoji i {
+      font-size: 22px;
+      color: var(--cyan);
+    }
+
+    .svc:hover .svc-emoji {
+      background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+      border-color: transparent;
+    }
+
+    .svc:hover .svc-emoji i {
+      color: #fff;
+    }
+
+    .svc-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    body.ar .svc-name {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 16px;
+      text-transform: none;
+    }
+
+    .svc-desc {
+      font-size: 12.5px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .svc-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .svc-tag.urgent {
+      background: rgba(255, 107, 26, 0.1);
+      border-color: rgba(255, 107, 26, 0.25);
+      color: var(--orange);
+    }
+
+    .svc-tag.popular {
+      background: rgba(37, 211, 102, 0.1);
+      border-color: rgba(37, 211, 102, 0.25);
+      color: #25d366;
+    }
+
+    /* BRANDS */
+    .brands-bar {
+      padding: 44px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brands-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brands-lbl {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-right: 12px;
+      white-space: nowrap;
+    }
+
+    .brand-chip {
+      padding: 7px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray);
+      transition: all 0.2s;
+    }
+
+    .brand-chip:hover {
+      border-color: var(--cyan);
+      color: var(--white);
+    }
+
+    /* WHY */
+    .why-grid {
+      display: block;
+      max-width: 860px;
+    }
+
+    .why-feats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    #why { padding: 70px 0; }
+
+    .wf {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      background: var(--card);
+      transition: all 0.3s var(--ease);
+    }
+
+    .wf:hover {
+      border-color: var(--border);
+      transform: translateX(6px);
+    }
+
+    body.ar .wf:hover {
+      transform: translateX(-6px);
+    }
+
+    .wf-ic {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 14px rgba(0, 212, 255, 0.25);
+    }
+
+    .wf-body h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    body.ar .wf-body h4 {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      text-transform: none;
+      font-size: 15px;
+    }
+
+    .wf-body p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+
+    .gtext strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .gtext p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* PROCESS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 27px;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      background: var(--bg2);
+      border: 2px solid var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+      transition: background 0.4s;
+    }
+
+    .step h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    body.ar .step h4 {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      text-transform: none;
+      font-size: 14px;
+    }
+
+    .step p {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      transition: all 0.3s var(--ease);
+      position: relative;
+    }
+
+    .rcard::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      font-size: 60px;
+      line-height: 1;
+      color: rgba(0, 212, 255, 0.1);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    body.ar .rcard::before {
+      right: auto;
+      left: 22px;
+    }
+
+    .rcard:hover {
+      border-color: rgba(0, 212, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .r-stars {
+      color: #f59e0b;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .r-text {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .r-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .r-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--bg);
+    }
+
+    .r-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      display: block;
+    }
+
+    .r-loc {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .c-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .c-ch {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s var(--ease);
+    }
+
+    .c-ch:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateX(6px);
+      background: rgba(0, 212, 255, 0.04);
+    }
+
+    body.ar .c-ch:hover {
+      transform: translateX(-6px);
+    }
+
+    .c-ch-ic {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .c-ch strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .c-ch span {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .map-embed {
+      margin-top: 20px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .map-embed iframe {
+      display: block;
+    }
+
+    .map-open-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      background: var(--bg3);
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      border-top: 1px solid var(--border);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .map-open-btn:hover {
+      background: rgba(0, 212, 255, 0.08);
+      color: var(--cyan2, var(--cyan));
+    }
+
+    .cform {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      transition: background 0.4s;
+    }
+
+    .cform-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    body.ar .cform-title {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      text-transform: none;
+    }
+
+    .fg {
+      margin-bottom: 16px;
+    }
+
+    .fg label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.4s;
+      -webkit-appearance: none;
+    }
+
+    .fg input::placeholder,
+    .fg textarea::placeholder {
+      color: var(--input-ph);
+    }
+
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus {
+      border-color: var(--cyan);
+      background: rgba(0, 153, 204, 0.08);
+    }
+
+    .fg select {
+      padding-right: 44px;
+      cursor: pointer;
+    }
+
+    .select-wrap {
+      position: relative;
+    }
+
+    .select-wrap select {
+      width: 100%;
+    }
+
+    .select-wrap .select-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-size: 13px;
+      pointer-events: none;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    .select-wrap select:focus ~ .select-icon {
+      transform: translateY(-50%) rotate(180deg);
+      color: var(--cyan);
+    }
+
+    .fg select option {
+      background: var(--select-bg);
+      color: var(--white);
+    }
+
+    .fg textarea {
+      resize: none;
+      height: 86px;
+    }
+
+    .fg-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+      color: var(--bg);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 22px rgba(0, 212, 255, 0.3);
+      transition: all 0.3s var(--ease);
+      margin-top: 6px;
+    }
+
+    body.ar .btn-submit {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0, 212, 255, 0.45);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer-bg);
+      padding: 50px 5% 28px;
+      border-top: 1px solid var(--footer-border);
+      transition: background 0.4s;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .f-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .f-links a {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .f-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-line {
+      border: none;
+      border-top: 1px solid var(--footer-border);
+      margin-bottom: 20px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--footer-copy);
+      text-align: center;
+    }
+
+    /* WhatsApp FAB */
+    .wa-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 300;
+      width: 54px;
+      height: 54px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+      transition: all 0.3s var(--ease);
+      animation: popIn 0.6s 0.5s var(--ease) both;
+    }
+
+    .wa-fab:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6);
+    }
+
+    body.ar .wa-fab {
+      right: auto;
+      left: 28px;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0) rotate(-20deg)
+      }
+
+      to {
+        transform: scale(1) rotate(0)
+      }
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 {
+      transition-delay: 0.1s;
+    }
+
+    .d2 {
+      transition-delay: 0.2s;
+    }
+
+    .d3 {
+      transition-delay: 0.3s;
+    }
+
+    .d4 {
+      transition-delay: 0.4s;
+    }
+
+    /* FONT AWESOME ICON STYLES */
+    .fa-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    .logo-mark .fa-icon,
+    .logo-mark i {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .wf-ic i {
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .hcard-icon i {
+      font-size: 26px;
+      color: var(--cyan);
+    }
+
+    .svc-emoji i {
+      font-size: 28px;
+      color: var(--cyan);
+    }
+
+    .step-num i {
+      font-size: 20px;
+      color: var(--cyan);
+    }
+
+    .wv-icon i {
+      font-size: 34px;
+      color: var(--cyan);
+    }
+
+    .c-ch-ic i {
+      font-size: 20px;
+      color: var(--cyan);
+    }
+
+    .wa-fab i {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .theme-toggle i {
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    .btn-a i,
+    .btn-b i,
+    .cta-call i,
+    .btn-submit i {
+      font-size: 14px;
+    }
+
+    .hero-chip i {
+      font-size: 10px;
+    }
+
+    .chip-dot {
+      display: none;
+    }
+
+    .brand-chip i {
+      margin-right: 5px;
+      font-size: 11px;
+      color: var(--cyan);
+    }
+
+    .wv-cta-arrow i {
+      font-size: 18px;
+      color: rgba(8, 14, 23, 0.7);
+    }
+
+    body.light .wv-cta-arrow i {
+      color: rgba(8, 14, 23, 0.6);
+    }
+
+    body.light .hcard-icon i {
+      color: var(--cyan);
+    }
+
+    body.light .svc-emoji i {
+      color: var(--cyan);
+    }
+
+    body.light .step-num i {
+      color: var(--cyan);
+    }
+
+    body.light .c-ch-ic i {
+      color: var(--cyan);
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s var(--ease);
+      flex-shrink: 0;
+      color: var(--white);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--cyan);
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    /* Light mode overrides for hardcoded colors */
+    body.light .r-avatar {
+      color: #ffffff;
+    }
+
+    body.light .svc-name {
+      color: var(--white);
+    }
+
+    body.light .r-name {
+      color: var(--white);
+    }
+
+    body.light .gtext strong {
+      color: var(--white);
+    }
+
+    body.light .wf-body h4 {
+      color: var(--white);
+    }
+
+    body.light .wv-num {
+      color: var(--cyan);
+    }
+
+    body.light .hcard-num {
+      color: var(--cyan);
+    }
+
+    body.light .hero-h1 {
+      color: var(--white);
+    }
+
+    body.light .sec-title {
+      color: var(--white);
+    }
+
+    body.light .cform-title {
+      color: var(--white);
+    }
+
+    body.light .logo-tagline {
+      color: var(--cyan);
+    }
+
+    body.light .strip {
+      background: var(--cyan);
+      color: #ffffff;
+    }
+
+    body.light .brand-chip:hover {
+      color: var(--white);
+    }
+
+    body.light .step h4 {
+      color: var(--white);
+    }
+
+    body.light .hero-chip {
+      background: rgba(0, 153, 204, 0.1);
+      border-color: rgba(0, 153, 204, 0.3);
+      color: var(--cyan);
+    }
+
+    body.light .svc {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.11);
+      border-color: rgba(0, 100, 180, 0.14);
+    }
+
+    body.light .hcard {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.11);
+      border-color: rgba(0, 100, 180, 0.14);
+    }
+
+    body.light .rcard {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.11);
+      border-color: rgba(0, 100, 180, 0.14);
+    }
+
+    body.light .wf {
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.09);
+      border-color: rgba(0, 100, 180, 0.14);
+    }
+
+    body.light .c-ch {
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.09);
+      border-color: rgba(0, 100, 180, 0.14);
+    }
+
+    body.light .cform {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+    }
+
+    body.light .step-num {
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 100, 180, 0.18);
+    }
+
+    body.light .gitem {
+      border-color: rgba(0, 100, 180, 0.16);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    body.light .brands-bar {
+      border-color: rgba(0, 100, 180, 0.18);
+    }
+
+    body.light .blob-1 {
+      background: rgba(0, 136, 187, 0.14);
+    }
+
+    body.light .blob-2 {
+      background: rgba(217, 79, 0, 0.1);
+    }
+
+    body.light .mobile-menu ul a {
+      border-bottom-color: rgba(0, 0, 0, 0.08);
+    }
+
+    body.light .svc::before {
+      background: linear-gradient(135deg, rgba(0, 136, 187, 0.08), transparent);
+    }
+
+    body.light .svc-tag {
+      background: rgba(0, 136, 187, 0.1);
+      border-color: rgba(0, 136, 187, 0.22);
+      color: var(--cyan);
+    }
+
+    body.light #services {
+      border-bottom: 1px solid rgba(0, 100, 180, 0.1);
+    }
+
+    body.light #why {
+      border-bottom: 1px solid rgba(0, 100, 180, 0.1);
+    }
+
+    body.light #process {
+      border-bottom: 1px solid rgba(0, 100, 180, 0.1);
+    }
+
+    body.light #gallery {
+      border-bottom: 1px solid rgba(0, 100, 180, 0.1);
+    }
+
+    body.light .brands-bar {
+      background: var(--bg3);
+    }
+
+    body.light footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    /* ═══ GALLERY ═══ */
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .gallery-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .gf-btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--gray);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+    }
+
+    .gf-btn:hover,
+    .gf-btn.active {
+      background: var(--cyan);
+      color: var(--bg);
+      border-color: var(--cyan);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      grid-auto-flow: row dense;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .gitem {
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.35s var(--ease);
+      border: 1px solid var(--border);
+    }
+
+    .gitem.tall {
+      grid-row: span 2;
+    }
+
+    .gitem.hidden {
+      display: none;
+    }
+
+    .gitem:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .gitem-img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gitem-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease);
+      display: block;
+    }
+
+    .gitem:hover .gitem-img img {
+      transform: scale(1.07);
+    }
+
+    .gitem-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 212, 255, 0.15) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gitem:hover .gitem-overlay {
+      opacity: 1;
+    }
+
+    .gitem-overlay-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      padding: 12px 14px 52px;
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    .gitem-overlay-inner > i {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 16px;
+      color: var(--cyan);
+    }
+
+    .gitem-overlay-inner span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .gitem-overlay-desc {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.45;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .lb-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      max-width: 580px;
+      line-height: 1.55;
+      margin-top: -4px;
+    }
+
+    .gitem-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 14px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .gitem-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      padding: 3px 9px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .gitem-loc {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gitem-loc i {
+      font-size: 9px;
+      color: var(--cyan);
+    }
+
+    .gallery-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 24px 28px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .gallery-cta p {
+      font-size: 14px;
+      color: var(--gray);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lb-inner {
+      position: relative;
+      max-width: 88vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lb-inner img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      display: block;
+    }
+
+    .lb-caption {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .lb-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      text-align: center;
+      max-width: 560px;
+      line-height: 1.55;
+    }
+
+    .lb-close {
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .lb-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    .lb-prev,
+    .lb-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .lb-prev {
+      left: 20px;
+    }
+
+    .lb-next {
+      right: 20px;
+    }
+
+    .lb-prev:hover,
+    .lb-next:hover {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: var(--bg);
+    }
+
+    /* SERVICES TOGGLE */
+    .svc-hidden {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .svc-hidden.svc-visible {
+      display: block;
+      animation: svcReveal 0.45s var(--ease) both;
+    }
+
+    @keyframes svcReveal {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .svc-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .svc-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 10px;
+      border: 1.5px solid var(--cyan);
+      background: transparent;
+      color: var(--cyan);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+
+    body.ar .svc-toggle-btn {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .svc-toggle-btn:hover {
+      background: var(--cyan);
+      color: var(--bg);
+      box-shadow: 0 6px 22px rgba(0, 212, 255, 0.3);
+    }
+
+    .svc-toggle-btn i {
+      transition: transform 0.35s var(--ease);
+      font-size: 13px;
+    }
+
+    .svc-toggle-btn.open i {
+      transform: rotate(180deg);
+    }
+
+    .svc-count {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: opacity 0.3s;
+    }
+
+    .svc-count.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* SECTION PADDING CLASS */
+    .sec-pad {
+      padding: 100px 0;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media(max-width:1100px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hcard.span2 {
+        grid-column: 1/-1;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .steps::before {
+        display: none;
+      }
+
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media(max-width:768px) {
+
+      /* NAV */
+      .nav-menu,
+      .cta-call {
+        display: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      #nav {
+        padding: 0 4%;
+      }
+
+      /* HERO — stack cleanly, reduce font */
+      .hero {
+        padding: 80px 4% 48px;
+        min-height: auto;
+      }
+
+      .hero-h1 {
+        font-size: clamp(42px, 11vw, 68px);
+        letter-spacing: -0.5px;
+        margin-bottom: 18px;
+      }
+
+      .hero-desc {
+        font-size: 14px;
+        margin-bottom: 28px;
+        max-width: 100%;
+      }
+
+      .hero-btns {
+        gap: 10px;
+      }
+
+      .btn-a,
+      .btn-b {
+        padding: 13px 20px;
+        font-size: 13px;
+      }
+
+      .hero-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .hcard {
+        padding: 16px 14px;
+      }
+
+      .hcard-num {
+        font-size: 30px;
+      }
+
+      .hcard.span2 {
+        grid-column: 1/-1;
+      }
+
+      /* STRIP */
+      .strip {
+        padding: 14px 0;
+      }
+
+      .strip-item {
+        font-size: 12px;
+        padding: 0 18px;
+      }
+
+      /* SECTIONS — reduce vertical padding */
+      .sec-pad {
+        padding: 60px 0;
+      }
+
+      .sec-title {
+        font-size: clamp(30px, 8vw, 48px);
+        letter-spacing: -0.3px;
+      }
+
+      .sec-sub {
+        font-size: 14px;
+        margin-bottom: 32px;
+      }
+
+      /* SERVICES */
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .svc {
+        padding: 20px 16px;
+      }
+
+      .svc-name {
+        font-size: 16px;
+      }
+
+      .svc-desc {
+        font-size: 12px;
+      }
+
+      /* WHY */
+      .why-grid {
+        gap: 32px;
+      }
+
+      .why-feats {
+        grid-template-columns: 1fr;
+      }
+
+      .wf {
+        padding: 14px;
+      }
+
+      .wf-ic {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+      }
+
+      /* PROCESS */
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      /* GALLERY */
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        gap: 10px;
+      }
+
+      .gitem.tall {
+        grid-row: span 1;
+      }
+
+      .gitem .gitem-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);
+      }
+
+      .gitem-overlay-desc {
+        font-size: 10px;
+      }
+
+      .gallery-filters {
+        gap: 6px;
+      }
+
+      .gf-btn {
+        padding: 7px 12px;
+        font-size: 11px;
+      }
+
+      /* REVIEWS */
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* CONTACT */
+      .fg-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cform {
+        padding: 24px 18px;
+      }
+
+      /* FOOTER */
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .f-links {
+        gap: 16px;
+      }
+
+      /* WA FAB */
+      .wa-fab {
+        bottom: 18px;
+        right: 14px;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      body.ar .wa-fab {
+        right: auto;
+        left: 14px;
+      }
+    }
+
+    @media(max-width:480px) {
+
+      /* NAV */
+      #nav {
+        height: 58px;
+      }
+
+      .mobile-menu {
+        top: 58px;
+      }
+
+      .logo-name {
+        font-size: 17px;
+      }
+
+      .logo-tagline {
+        display: none;
+      }
+
+      .lang-pill {
+        display: none;
+      }
+
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 68px 4% 40px;
+      }
+
+      .hero-h1 {
+        font-size: clamp(36px, 10vw, 56px);
+      }
+
+      .hero-chip {
+        font-size: 10px;
+        padding: 6px 12px;
+        margin-bottom: 18px;
+      }
+
+      .hero-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .hcard {
+        padding: 14px 12px;
+      }
+
+      .hcard-num {
+        font-size: 26px;
+      }
+
+      .hcard-lbl {
+        font-size: 10px;
+      }
+
+      .hcard-icon i {
+        font-size: 17px;
+      }
+
+      .hcard-icon {
+        margin-bottom: 10px;
+      }
+
+      .hcard.span2 {
+        flex-direction: column;
+        text-align: center;
+        padding: 14px;
+        gap: 6px;
+      }
+
+      .hcard.span2 .hcard-right {
+        text-align: center;
+      }
+
+      /* STRIP */
+      .strip-item {
+        font-size: 11px;
+        padding: 0 14px;
+      }
+
+      /* SERVICES */
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .svc {
+        padding: 16px 12px;
+      }
+
+      .svc-emoji {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+
+      .svc-emoji i {
+        font-size: 17px;
+      }
+
+      .svc-name {
+        font-size: 14px;
+      }
+
+      .svc-desc {
+        font-size: 11.5px;
+        line-height: 1.5;
+      }
+
+      .svc-tag {
+        font-size: 9px;
+        padding: 2px 7px;
+      }
+
+      /* PROCESS */
+      .steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .step-num {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 12px;
+      }
+
+      .step-num i {
+        font-size: 18px;
+      }
+
+      .step h4 {
+        font-size: 13px;
+      }
+
+      .step p {
+        font-size: 11px;
+      }
+
+      /* GALLERY */
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+        gap: 8px;
+      }
+
+      .gf-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+      }
+
+      .gallery-header {
+        margin-bottom: 24px;
+      }
+
+      /* REVIEWS */
+      .rcard {
+        padding: 20px 16px;
+      }
+
+      .rcard::before {
+        display: none;
+      }
+
+      /* CONTACT */
+      .c-channels {
+        margin-top: 24px;
+      }
+
+      .cform {
+        padding: 18px 14px;
+      }
+
+      .cform-title {
+        font-size: 20px;
+      }
+
+      /* MISC */
+      .wrap {
+        padding: 0 4%;
+      }
+
+      .sec-pad {
+        padding: 48px 0;
+      }
+
+      .sec-title {
+        font-size: clamp(28px, 9vw, 40px);
+      }
+
+      .sec-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="https://wa.me/966563837128" class="wa-fab" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" onclick="closeMobile()" data-en="Services" data-ar="الخدمات">Services</a></li>
+      <li><a href="#why" onclick="closeMobile()" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+      <li><a href="#process" onclick="closeMobile()" data-en="How It Works" data-ar="كيف نعمل">How It Works</a></li>
+      <li><a href="#gallery" onclick="closeMobile()" data-en="Our Work" data-ar="أعمالنا">Our Work</a></li>
+      <li><a href="#contact" onclick="closeMobile()" data-en="Contact" data-ar="تواصل">Contact</a></li>
+    </ul>
+    <div class="mobile-bottom">
+      <a href="tel:+966563837128" class="cta-call" style="display:inline-flex;"><i class="fa-solid fa-phone"></i> <span
+          data-en="Call Now" data-ar="اتصل الآن">Call Now</span></a>
+      <a href="https://wa.me/966563837128" class="btn-b" style="font-size:13px;padding:9px 18px;" target="_blank"><i
+          class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="logo-wrap">
+      <div class="logo-mark"><i class="fa-solid fa-snowflake"></i></div>
+      <div>
+        <div class="logo-name" data-en="Bilal Tabreed" data-ar="تبريد بلال">Bilal Tabreed</div>
+        <span class="logo-tagline" data-en="COOLING & APPLIANCE REPAIR · RIYADH"
+          data-ar="تبريد وإصلاح الأجهزة · الرياض">COOLING &amp; APPLIANCE REPAIR · RIYADH</span>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+      <li><a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+      <li><a href="#process" data-en="How It Works" data-ar="كيف نعمل">How It Works</a></li>
+      <li><a href="#gallery" data-en="Our Work" data-ar="أعمالنا">Our Work</a></li>
+      <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <!-- THEME TOGGLE -->
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle light/dark mode"><i
+          class="fa-solid fa-moon" id="themeIcon"></i></button>
+      <div class="lang-pill">
+        <button class="lbtn on" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lbtn" id="btnAR" onclick="setLang('ar')">عربي</button>
+      </div>
+      <a href="tel:+966563837128" class="cta-call"><i class="fa-solid fa-phone"></i> <span data-en="Call Now"
+          data-ar="اتصل">Call Now</span></a>
+      <div class="burger" id="burger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-chip"><i class="fa-solid fa-circle-dot" style="font-size:9px;color:var(--cyan)"></i><span
+            data-en="Available 24/7 · Riyadh, KSA" data-ar="متاح ٢٤/٧ · الرياض، المملكة">Available 24/7 · Riyadh,
+            KSA</span></div>
+        <h1 class="hero-h1">
+          <span data-en="YOUR HOME" data-ar="منزلك">YOUR HOME</span>
+          <span class="line2" data-en="STAYS COOL" data-ar="يبقى بارداً">STAYS COOL</span>
+          <span class="line3" data-en="&amp; RUNNING." data-ar="ويعمل دائماً.">&amp; RUNNING.</span>
+        </h1>
+        <p class="hero-desc"
+          data-en="Expert repair for AC units, freezers, washing machines, water pumps, fans, and all home appliances. Serving Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah."
+          data-ar="إصلاح متخصص للمكيفات والثلاجات والغسالات ومضخات المياه والمراوح وجميع الأجهزة المنزلية. نخدم الرمال، اليرموك، المنسية والجنادرية.">
+          Expert repair for AC units, freezers, washing machines, water pumps, fans, and all home appliances. Serving Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-a"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-en="Book a Repair"
+              data-ar="احجز إصلاح">Book a Repair</span></a>
+          <a href="https://wa.me/966563837128" class="btn-b" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span
+              data-en="WhatsApp Us" data-ar="واتساب">WhatsApp Us</span></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hcard"><span class="hcard-icon"><i class="fa-solid fa-bolt"></i></span><span
+            class="hcard-num">2hr</span><span class="hcard-lbl" data-en="Emergency Response"
+            data-ar="استجابة طارئة">Emergency Response</span></div>
+        <div class="hcard"><span class="hcard-icon"><i class="fa-solid fa-shield-halved"></i></span><span
+            class="hcard-num">30</span><span class="hcard-lbl" data-en="Day Warranty" data-ar="يوم ضمان">Day
+            Warranty</span></div>
+        <div class="hcard"><span class="hcard-icon"><i class="fa-solid fa-users"></i></span><span
+            class="hcard-num">500+</span><span class="hcard-lbl" data-en="Happy Customers" data-ar="عميل سعيد">Happy
+            Customers</span></div>
+        <div class="hcard"><span class="hcard-icon"><i class="fa-solid fa-star"></i></span><span
+            class="hcard-num">4.9</span><span class="hcard-lbl" data-en="Google Rating" data-ar="تقييم جوجل">Google
+            Rating</span></div>
+        <div class="hcard span2">
+          <div><span class="hcard-icon"><i class="fa-solid fa-certificate"></i></span><span class="hcard-lbl"
+              data-en="Certified Technicians" data-ar="فنيون معتمدون">Certified Technicians</span></div>
+          <div class="hcard-right" style="text-align:right"><span class="hcard-num" style="font-size:28px" data-en="12+"
+              data-ar="+١٢">12+</span><span class="hcard-lbl" data-en="Services Offered" data-ar="خدمة متاحة">Services
+              Offered</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-inner">
+      <span class="strip-item" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+      <span class="strip-item" data-en="Freezer Service" data-ar="صيانة ثلاجة">Freezer Service</span>
+      <span class="strip-item" data-en="Washing Machine" data-ar="غسالة ملابس">Washing Machine</span>
+      <span class="strip-item" data-en="Water Pump" data-ar="مضخة مياه">Water Pump</span>
+      <span class="strip-item" data-en="Fan Repair" data-ar="إصلاح مروحة">Fan Repair</span>
+      <span class="strip-item" data-en="Gas Recharge" data-ar="شحن غاز">Gas Recharge</span>
+      <span class="strip-item" data-en="Same-Day Service" data-ar="خدمة في نفس اليوم">Same-Day Service</span>
+      <span class="strip-item" data-en="24/7 Emergency" data-ar="طوارئ ٢٤/٧">24/7 Emergency</span>
+      <span class="strip-item" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+      <span class="strip-item" data-en="Freezer Service" data-ar="صيانة ثلاجة">Freezer Service</span>
+      <span class="strip-item" data-en="Washing Machine" data-ar="غسالة ملابس">Washing Machine</span>
+      <span class="strip-item" data-en="Water Pump" data-ar="مضخة مياه">Water Pump</span>
+      <span class="strip-item" data-en="Fan Repair" data-ar="إصلاح مروحة">Fan Repair</span>
+      <span class="strip-item" data-en="Gas Recharge" data-ar="شحن غاز">Gas Recharge</span>
+      <span class="strip-item" data-en="Same-Day Service" data-ar="خدمة في نفس اليوم">Same-Day Service</span>
+      <span class="strip-item" data-en="24/7 Emergency" data-ar="طوارئ ٢٤/٧">24/7 Emergency</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="sec-pad">
+    <div class="wrap">
+      <div class="sec-label reveal" data-en="What We Fix" data-ar="ما نُصلحه">What We Fix</div>
+      <h2 class="sec-title reveal" data-en="ALL YOUR<br>APPLIANCES." data-ar="جميع<br>أجهزتك.">ALL YOUR<br>APPLIANCES.
+      </h2>
+      <p class="sec-sub reveal"
+        data-en="From your AC to your washing machine — if it runs on electricity or coolant, we fix it fast."
+        data-ar="من مكيفك إلى غسالتك — إذا كان يعمل بالكهرباء أو المبرد، نصلحه بسرعة.">From your AC to your washing
+        machine — if it runs on electricity or coolant, we fix it fast.</p>
+      <div class="services-grid" id="servicesGrid">
+        <div class="svc reveal"><span class="svc-emoji"><i class="fa-solid fa-snowflake"></i></span>
+          <div class="svc-name" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</div>
+          <div class="svc-desc"
+            data-en="Split, window & central. Not cooling, leaking, or noisy — same-day diagnosis and fix."
+            data-ar="سبليت، شباك ومركزي. لا يبرد، يسرب، أو يصدر ضوضاء — تشخيص وإصلاح في نفس اليوم.">Split, window &
+            central. Not cooling, leaking, or noisy — same-day diagnosis and fix.</div><span class="svc-tag popular"
+            data-en="Most Popular" data-ar="الأكثر طلباً">Most Popular</span>
+        </div>
+        <div class="svc reveal d1"><span class="svc-emoji"><i class="fa-solid fa-temperature-arrow-down"></i></span>
+          <div class="svc-name" data-en="Freezer Repair" data-ar="إصلاح ثلاجة">Freezer Repair</div>
+          <div class="svc-desc" data-en="Fridge, deep freezer & display coolers. Compressor, thermostat, seals & more."
+            data-ar="ثلاجة، فريزر عميق وعرض. كمبريسور، ترموستات، أختام والمزيد.">Fridge, deep freezer & display coolers.
+            Compressor, thermostat, seals & more.</div><span class="svc-tag" data-en="All Brands"
+            data-ar="كل الماركات">All Brands</span>
+        </div>
+        <div class="svc reveal d2"><span class="svc-emoji"><i class="fa-solid fa-wind"></i></span>
+          <div class="svc-name" data-en="AC Maintenance" data-ar="صيانة مكيف">AC Maintenance</div>
+          <div class="svc-desc"
+            data-en="Deep cleaning, filter change, gas top-up & performance check. Extend your unit's life."
+            data-ar="تنظيف عميق، تغيير فلاتر، شحن غاز وفحص أداء. مدد عمر وحدتك.">Deep cleaning, filter change, gas
+            top-up & performance check. Extend your unit's life.</div><span class="svc-tag" data-en="Annual Plans"
+            data-ar="خطط سنوية">Annual Plans</span>
+        </div>
+        <div class="svc reveal d3"><span class="svc-emoji"><i class="fa-solid fa-gas-pump"></i></span>
+          <div class="svc-name" data-en="Gas Recharging" data-ar="شحن الغاز">Gas Recharging</div>
+          <div class="svc-desc"
+            data-en="R22, R32, R410A and all refrigerant types. Leak detection included before recharge."
+            data-ar="R22، R32، R410A وجميع أنواع الغاز المبرد. كشف تسرب مشمول قبل الشحن.">R22, R32, R410A and all types.
+            Leak detection included before recharge.</div><span class="svc-tag" data-en="All Types"
+            data-ar="كل الأنواع">All Types</span>
+        </div>
+        <div class="svc reveal"><span class="svc-emoji"><i class="fa-solid fa-soap"></i></span>
+          <div class="svc-name" data-en="Washing Machine" data-ar="غسالة ملابس">Washing Machine</div>
+          <div class="svc-desc"
+            data-en="Top & front load. Not spinning, leaking, not draining, motor issues — all fixed fast."
+            data-ar="عمودية وأمامية. لا تدور، تسرب، لا تصرف، مشاكل موتور — جميعها تُصلح بسرعة.">Top & front load. Not
+            spinning, leaking, not draining, motor issues — fixed fast.</div><span class="svc-tag popular"
+            data-en="High Demand" data-ar="طلب عالٍ">High Demand</span>
+        </div>
+        <div class="svc reveal d1"><span class="svc-emoji"><i class="fa-solid fa-rotate"></i></span>
+          <div class="svc-name" data-en="Spinner / Dryer" data-ar="آلة عصر / مجفف">Spinner / Dryer</div>
+          <div class="svc-desc"
+            data-en="Spinner not working, vibrating badly or not drying? All spinner and dryer models serviced."
+            data-ar="المعصرة لا تعمل أو تهتز؟ نصيّن جميع موديلات المعصرات والمجففات.">Spinner not working, vibrating
+            badly or not drying? All models serviced.</div><span class="svc-tag" data-en="All Models"
+            data-ar="كل الموديلات">All Models</span>
+        </div>
+        <div class="svc reveal d2"><span class="svc-emoji"><i class="fa-solid fa-droplet"></i></span>
+          <div class="svc-name" data-en="Water Pump" data-ar="مضخة مياه">Water Pump</div>
+          <div class="svc-desc"
+            data-en="Submersible, surface & booster pumps. Low pressure, no water, overheating — all fixed."
+            data-ar="غاطسة، سطحية وتعزيز. ضغط منخفض، لا ماء، الضخة تسخن — حلول سريعة.">Submersible, surface & booster.
+            Low pressure, no water, overheating — sorted.</div><span class="svc-tag" data-en="Residential"
+            data-ar="سكني">Residential</span>
+        </div>
+        <div class="svc reveal d3"><span class="svc-emoji"><i class="fa-solid fa-fan"></i></span>
+          <div class="svc-name" data-en="Fans & Coolers" data-ar="مراوح ومبردات">Fans & Coolers</div>
+          <div class="svc-desc"
+            data-en="Ceiling fans, tower fans, desert coolers & exhaust fans. Noise, wobble, no power — fixed."
+            data-ar="مراوح سقف، برج، مبردات صحراوية وشفاطات. ضوضاء، اهتزاز، لا طاقة — تُصلح.">Ceiling fans, tower fans,
+            desert coolers & exhaust fans. Noise, wobble, no power — fixed.</div><span class="svc-tag"
+            data-en="All Types" data-ar="كل الأنواع">All Types</span>
+        </div>
+        <!-- Hidden by default — revealed on "View All" -->
+        <div class="svc svc-hidden reveal"><span class="svc-emoji"><i class="fa-solid fa-fire-burner"></i></span>
+          <div class="svc-name" data-en="Oven & Stove" data-ar="فرن وموقد">Oven & Stove</div>
+          <div class="svc-desc"
+            data-en="Gas & electric ovens, cooktops & ranges. Heating element, thermostat & ignition repair."
+            data-ar="أفران غاز وكهرباء. عنصر تسخين، ترموستات وإصلاح إشعال.">Gas & electric ovens, cooktops. Heating
+            element, thermostat & ignition repair.</div><span class="svc-tag" data-en="Gas & Electric"
+            data-ar="غاز وكهرباء">Gas & Electric</span>
+        </div>
+        <div class="svc svc-hidden reveal d1"><span class="svc-emoji"><i class="fa-solid fa-utensils"></i></span>
+          <div class="svc-name" data-en="Dishwasher" data-ar="غسالة أطباق">Dishwasher</div>
+          <div class="svc-desc"
+            data-en="Not cleaning, door latch broken, not draining or leaking — all dishwasher brands repaired."
+            data-ar="لا تنظف، قفل الباب مكسور، لا تصرف أو تسرب — جميع ماركات غسالات الأطباق.">Not cleaning, door broken,
+            not draining or leaking — all brands repaired.</div><span class="svc-tag" data-en="All Brands"
+            data-ar="كل الماركات">All Brands</span>
+        </div>
+        <div class="svc svc-hidden reveal d2"><span class="svc-emoji"><i class="fa-solid fa-building"></i></span>
+          <div class="svc-name" data-en="Commercial" data-ar="تجاري">Commercial</div>
+          <div class="svc-desc"
+            data-en="Restaurants, shops & offices. Commercial freezers, chillers & HVAC systems — minimal downtime."
+            data-ar="مطاعم، محلات ومكاتب. ثلاجات تجارية ومبردات — أقل توقف ممكن.">Restaurants, shops & offices.
+            Commercial freezers, chillers & HVAC — minimal downtime.</div><span class="svc-tag" data-en="Business"
+            data-ar="تجاري">Business</span>
+        </div>
+        <div class="svc svc-hidden reveal d3"
+          style="border-color:rgba(255,107,26,0.3);background:rgba(255,107,26,0.04);"><span class="svc-emoji"><i
+              class="fa-solid fa-triangle-exclamation"></i></span>
+          <div class="svc-name" data-en="Emergency 24/7" data-ar="طوارئ ٢٤/٧">Emergency 24/7</div>
+          <div class="svc-desc"
+            data-en="AC down in Riyadh heat? Restaurant freezer broken? We respond within 2 hours, any time."
+            data-ar="مكيفك معطل في حر الرياض؟ ثلاجة المطعم انهارت؟ نستجيب خلال ساعتين في أي وقت.">AC down in Riyadh
+            heat? Freezer broken? We respond within 2 hours, any time.</div><span class="svc-tag urgent"><i
+              class="fa-solid fa-bolt"></i> <span data-en="Urgent" data-ar="عاجل">Urgent</span></span>
+        </div>
+      </div>
+
+      <!-- View All Button -->
+      <div class="svc-toggle-wrap">
+        <button class="svc-toggle-btn" id="svcToggleBtn" onclick="toggleServices()">
+          <span id="svcBtnText" data-en="View All Services" data-ar="عرض كل الخدمات">View All Services</span>
+          <i class="fa-solid fa-chevron-down" id="svcBtnIcon"></i>
+        </button>
+        <span class="svc-count" id="svcCount" data-en="+ 4 more services" data-ar="+ ٤ خدمات إضافية">+ 4 more
+          services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="sec-pad" style="background:var(--bg2);">
+    <div class="wrap">
+      <div class="why-grid">
+        <div>
+          <div class="sec-label reveal" data-en="Why Choose Us" data-ar="لماذا تختارنا">Why Choose Us</div>
+          <h2 class="sec-title reveal" data-en="RIYADH'S MOST<br>TRUSTED TEAM."
+            data-ar="الفريق الأكثر<br>ثقةً في الرياض.">RIYADH'S MOST<br>TRUSTED TEAM.</h2>
+          <p class="sec-sub reveal"
+            data-en="Bilal and his team built a reputation on speed, honesty, and quality. No shortcuts, no upsells — just the repair you need."
+            data-ar="بنى بلال وفريقه سمعتهم على السرعة والصدق والجودة. لا اختصارات — فقط الإصلاح الذي تحتاجه.">Bilal and
+            his team built a reputation on speed, honesty, and quality. No shortcuts, no upsells — just the repair you
+            need.</p>
+          <div class="why-feats">
+            <div class="wf reveal">
+              <div class="wf-ic"><i class="fa-solid fa-bolt"></i></div>
+              <div class="wf-body">
+                <h4 data-en="2-Hour Emergency Response" data-ar="استجابة طارئة خلال ساعتين">2-Hour Emergency Response
+                </h4>
+                <p data-en="Serving Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah. Expect us within 2 hours — 7 days a week, including holidays."
+                  data-ar="نخدم الرمال، اليرموك، المنسية والجنادرية. توقعنا خلال ساعتين — ٧ أيام في الأسبوع، بما فيها العطل.">Serving Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah. Expect us within 2 hours — 7 days a week, including holidays.</p>
+              </div>
+            </div>
+            <div class="wf reveal d1">
+              <div class="wf-ic"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="wf-body">
+                <h4 data-en="30-Day Parts & Labor Warranty" data-ar="ضمان ٣٠ يوماً على القطع والعمالة">30-Day Parts &
+                  Labor Warranty</h4>
+                <p data-en="Every repair is backed by a 30-day warranty. Same problem returns? We fix it free."
+                  data-ar="كل إصلاح مدعوم بضمان ٣٠ يوماً. إذا عادت نفس المشكلة، نصلحها مجاناً.">Every repair is backed
+                  by a 30-day warranty. Same problem returns? We fix it free.</p>
+              </div>
+            </div>
+            <div class="wf reveal d2">
+              <div class="wf-ic"><i class="fa-solid fa-tag"></i></div>
+              <div class="wf-body">
+                <h4 data-en="Upfront, Transparent Pricing" data-ar="أسعار شفافة ومسبقة">Upfront, Transparent Pricing
+                </h4>
+                <p data-en="We diagnose, then quote — before touching anything. No hidden fees. What we quote is what you pay."
+                  data-ar="نشخص ثم نقدم السعر قبل لمس أي شيء. لا رسوم خفية. ما نقوله هو ما تدفعه.">We diagnose, then
+                  quote — before touching anything. No surprise bills. What we quote is what you pay.</p>
+              </div>
+            </div>
+            <div class="wf reveal d3">
+              <div class="wf-ic"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="wf-body">
+                <h4 data-en="Book via WhatsApp in 60 Seconds" data-ar="احجز عبر واتساب في ٦٠ ثانية">Book via WhatsApp in
+                  60 Seconds</h4>
+                <p data-en="Send a message, describe your problem, get your slot confirmed instantly. No long phone menus."
+                  data-ar="أرسل رسالة، صف مشكلتك، يتم تأكيد موعدك فوراً. لا قوائم هاتفية طويلة.">Send a message,
+                  describe your problem, get your slot confirmed instantly. No long phone menus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="sec-pad">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:64px;">
+        <div class="sec-label reveal" style="justify-content:center;" data-en="How It Works" data-ar="كيف يعمل">How It
+          Works</div>
+        <h2 class="sec-title reveal" data-en="FIXED IN<br>4 SIMPLE STEPS." data-ar="إصلاح في<br>٤ خطوات بسيطة.">FIXED
+          IN<br>4 SIMPLE STEPS.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h4 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+          <p data-en="Call or WhatsApp to describe your problem. Takes less than 60 seconds."
+            data-ar="اتصل أو واتساب لوصف مشكلتك. يستغرق أقل من ٦٠ ثانية.">Call or WhatsApp. Takes less than 60 seconds.
+          </p>
+        </div>
+        <div class="step reveal d1">
+          <div class="step-num"><i class="fa-solid fa-calendar-check"></i></div>
+          <h4 data-en="Confirm Slot" data-ar="تأكيد الموعد">Confirm Slot</h4>
+          <p data-en="We book a time that suits you — same day or next day, morning or evening."
+            data-ar="نحجز وقتاً يناسبك — نفس اليوم أو الغد.">We book a time that suits you — same day available.</p>
+        </div>
+        <div class="step reveal d2">
+          <div class="step-num"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h4 data-en="Diagnose & Quote" data-ar="تشخيص وتسعير">Diagnose & Quote</h4>
+          <p data-en="Bilal inspects, tells you exactly what's wrong, and gives a price upfront."
+            data-ar="بلال يفحص ويخبرك بالضبط ما المشكلة ويعطيك السعر مسبقاً.">Bilal inspects, explains the problem, and
+            quotes upfront.</p>
+        </div>
+        <div class="step reveal d3">
+          <div class="step-num"><i class="fa-solid fa-circle-check"></i></div>
+          <h4 data-en="Fixed & Guaranteed" data-ar="مُصلح ومضمون">Fixed & Guaranteed</h4>
+          <p data-en="Repair done on-site. 30-day warranty issued. You're good to go."
+            data-ar="الإصلاح يتم في الموقع. يصدر ضمان ٣٠ يوماً.">Repair done on-site. 30-day warranty issued.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="sec-pad">
+    <div class="wrap">
+      <div class="gallery-header reveal">
+        <div>
+          <div class="sec-label" data-en="Our Work" data-ar="أعمالنا">Our Work</div>
+          <h2 class="sec-title" data-en="REAL JOBS,<br>REAL RESULTS." data-ar="أعمال حقيقية،<br>نتائج حقيقية.">REAL
+            JOBS,<br>REAL RESULTS.</h2>
+          <p class="sec-sub" style="margin-bottom:0"
+            data-en="Photos from actual repairs and installations in Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah. Every job done right."
+            data-ar="صور من إصلاحات وتركيبات حقيقية في الرمال، اليرموك، المنسية والجنادرية. كل عمل يتم بشكل صحيح.">Photos from actual repairs and installations in Ar Rimal, Al Yarmuk, Al Munsiyah &amp; Al Janadriyyah. Every job done right.</p>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters reveal">
+        <button class="gf-btn active" onclick="filterGallery('all', this)" data-en="All Work" data-ar="الكل">All
+          Work</button>
+        <button class="gf-btn" onclick="filterGallery('ac', this)" data-en="AC Repair" data-ar="مكيفات">AC
+          Repair</button>
+        <button class="gf-btn" onclick="filterGallery('freezer', this)" data-en="Freezer"
+          data-ar="ثلاجات">Freezer</button>
+        <button class="gf-btn" onclick="filterGallery('washing', this)" data-en="Washing Machine"
+          data-ar="غسالات">Washing Machine</button>
+        <button class="gf-btn" onclick="filterGallery('install', this)" data-en="Installation"
+          data-ar="تركيب">Installation</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- AC items -->
+        <div class="gitem reveal" data-cat="ac" onclick="openLightbox(0)">
+          <div class="gitem-img">
+            <img src="assets/ac-service.png" alt="AC unit repair" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+                <p class="gitem-overlay-desc">Unit not cooling — gas leak sealed and system recharged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Ar Rimal, Riyadh"
+                data-ar="الرمال، الرياض">Ar Rimal, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d1 tall" data-cat="ac" onclick="openLightbox(1)">
+          <div class="gitem-img">
+            <img src="assets/ac-outdoor-repair.png" alt="AC maintenance" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="AC Maintenance" data-ar="صيانة مكيف">AC Maintenance</span>
+                <p class="gitem-overlay-desc">Outdoor unit overheating — fan motor replaced, coils deep cleaned.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Maintenance" data-ar="صيانة">Maintenance</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Yarmuk, Riyadh"
+                data-ar="اليرموك، الرياض">Al Yarmuk, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d2" data-cat="freezer" onclick="openLightbox(2)">
+          <div class="gitem-img">
+            <img src="assets/fidge-repait.png" alt="Freezer repair" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Freezer Repair" data-ar="إصلاح ثلاجة">Freezer Repair</span>
+                <p class="gitem-overlay-desc">Not freezing — faulty thermostat replaced, door seal repaired.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Freezer" data-ar="ثلاجة">Freezer</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Munsiyah, Riyadh"
+                data-ar="المنسية، الرياض">Al Munsiyah, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d1" data-cat="washing" onclick="openLightbox(3)">
+          <div class="gitem-img">
+            <img src="assets/washing-machine-repair.png" alt="Washing machine repair" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Washing Machine" data-ar="غسالة">Washing Machine</span>
+                <p class="gitem-overlay-desc">Not draining — blocked pump filter cleared, drive belt replaced.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Washing Machine" data-ar="غسالة">Washing Machine</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Janadriyyah, Riyadh"
+                data-ar="الجنادرية، الرياض">Al Janadriyyah, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d2 tall" data-cat="install" onclick="openLightbox(4)">
+          <div class="gitem-img">
+            <img src="assets/ac-outdoor-installation.png" alt="AC installation" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="AC Installation" data-ar="تركيب مكيف">AC Installation</span>
+                <p class="gitem-overlay-desc">New split AC — indoor & outdoor units installed, piped and tested.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Installation" data-ar="تركيب">Installation</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Ar Rimal, Riyadh"
+                data-ar="الرمال، الرياض">Ar Rimal, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d3" data-cat="ac" onclick="openLightbox(5)">
+          <div class="gitem-img">
+            <img src="assets/indoor-ac-installation.png" alt="Split AC repair" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Split AC Fix" data-ar="إصلاح سبليت">Split AC Fix</span>
+                <p class="gitem-overlay-desc">Loud noise — loose fan blade tightened, bearings lubricated.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Yarmuk, Riyadh"
+                data-ar="اليرموك، الرياض">Al Yarmuk, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d1" data-cat="freezer" onclick="openLightbox(6)">
+          <div class="gitem-img">
+            <img src="assets/freezer-gas-refill.png" alt="Commercial freezer" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Commercial Freezer" data-ar="ثلاجة تجارية">Commercial Freezer</span>
+                <p class="gitem-overlay-desc">Temperature rising — compressor serviced, gas fully recharged.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Commercial" data-ar="تجاري">Commercial</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Munsiyah, Riyadh"
+                data-ar="المنسية، الرياض">Al Munsiyah, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d2" data-cat="install" onclick="openLightbox(7)">
+          <div class="gitem-img">
+            <img src="assets/refrigerator-repair.png" alt="Technician at work" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="On-Site Work" data-ar="عمل في الموقع">On-Site Work</span>
+                <p class="gitem-overlay-desc">Motor burnt out — replaced and rewired on-site.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Installation" data-ar="تركيب">Installation</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Janadriyyah, Riyadh"
+                data-ar="الجنادرية، الرياض">Al Janadriyyah, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d3" data-cat="ac" onclick="openLightbox(8)">
+          <div class="gitem-img">
+            <img src="assets/ac-gas-refill.png" alt="Gas recharge" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Gas Recharge" data-ar="شحن غاز">Gas Recharge</span>
+                <p class="gitem-overlay-desc">AC cooling weakly — low refrigerant detected, full recharge done.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Ar Rimal, Riyadh"
+                data-ar="الرمال، الرياض">Ar Rimal, Riyadh</span></span>
+          </div>
+        </div>
+
+        <div class="gitem reveal d1" data-cat="washing" onclick="openLightbox(9)">
+          <div class="gitem-img">
+            <img src="assets/machine-motor-repair.png" alt="Dryer repair" loading="lazy">
+            <div class="gitem-overlay">
+              <div class="gitem-overlay-inner">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-en="Dryer Repair" data-ar="إصلاح مجفف">Dryer Repair</span>
+                <p class="gitem-overlay-desc">Fridge not cooling — condenser coils cleaned, refrigerant corrected.</p>
+              </div>
+            </div>
+          </div>
+          <div class="gitem-info">
+            <span class="gitem-tag" data-en="Washing Machine" data-ar="غسالة">Washing Machine</span>
+            <span class="gitem-loc"><i class="fa-solid fa-location-dot"></i> <span data-en="Al Yarmuk, Riyadh"
+                data-ar="اليرموك، الرياض">Al Yarmuk, Riyadh</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec-pad">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="sec-label reveal" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</div>
+          <h2 class="sec-title reveal" data-en="BOOK YOUR<br>REPAIR TODAY." data-ar="احجز إصلاحك<br>اليوم.">BOOK
+            YOUR<br>REPAIR TODAY.</h2>
+          <p class="sec-sub reveal"
+            data-en="Call, WhatsApp, or fill the form. We confirm your time slot within minutes."
+            data-ar="اتصل، واتساب، أو املأ النموذج. نؤكد موعدك خلال دقائق.">Call, WhatsApp, or fill the form. We confirm
+            your time slot within minutes.</p>
+          <div class="c-channels">
+            <a href="tel:+966563837128" class="c-ch reveal">
+              <div class="c-ch-ic"><i class="fa-solid fa-phone"></i></div>
+              <div><strong data-en="Call Bilal Direct" data-ar="اتصل ببلال مباشرة">Call Bilal Direct</strong><span>+966
+                  56 383 7128</span></div>
+            </a>
+            <a href="https://wa.me/966563837128" class="c-ch reveal d1" target="_blank">
+              <div class="c-ch-ic"><i class="fa-brands fa-whatsapp"></i></div>
+              <div><strong>WhatsApp</strong><span data-en="Message anytime, reply in minutes"
+                  data-ar="راسل في أي وقت، رد في دقائق">Message anytime, reply in minutes</span></div>
+            </a>
+            <a href="https://maps.app.goo.gl/ju6DVcEpKvfNRxQn9" class="c-ch reveal d2" target="_blank">
+              <div class="c-ch-ic"><i class="fa-solid fa-location-dot"></i></div>
+              <div><strong data-en="Find Us on Google Maps" data-ar="ابحث عنا على خرائط جوجل">Find Us on Google
+                  Maps</strong><span data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية">Riyadh,
+                  Saudi Arabia</span></div>
+            </a>
+          </div>
+          <div class="map-embed reveal">
+            <iframe
+              src="https://maps.google.com/maps?q=24.846259,46.8287338&z=17&output=embed"
+              width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a href="https://maps.app.goo.gl/ju6DVcEpKvfNRxQn9" class="map-open-btn" target="_blank">
+              <i class="fa-solid fa-location-dot"></i>
+              <span data-en="Open Business Listing on Google Maps" data-ar="افتح قائمة الأعمال على خرائط جوجل">Open Business Listing on Google Maps</span>
+            </a>
+          </div>
+        </div>
+        <div class="cform reveal">
+          <div class="cform-title" data-en="Request a Service" data-ar="اطلب خدمة">Request a Service</div>
+          <div class="fg-row">
+            <div class="fg"><label data-en="Your Name" data-ar="اسمك">Your Name</label><input type="text" id="f-name"
+                placeholder="Enter your name" data-ph-en="Mohammed Ahmed" data-ph-ar="محمد أحمد"></div>
+            <div class="fg"><label data-en="Phone / WhatsApp" data-ar="الهاتف / واتساب">Phone / WhatsApp</label><input
+                type="tel" id="f-phone" placeholder="+966 xx xxx xxxx"></div>
+          </div>
+          <div class="fg">
+            <label data-en="Service Needed" data-ar="الخدمة المطلوبة">Service Needed</label>
+            <div class="select-wrap">
+              <select id="f-svc">
+                <option data-en="AC Repair" data-ar="إصلاح مكيف">AC Repair</option>
+                <option data-en="Freezer / Fridge Repair" data-ar="إصلاح ثلاجة / فريزر">Freezer / Fridge Repair</option>
+                <option data-en="AC Maintenance / Gas Recharge" data-ar="صيانة مكيف / شحن غاز">AC Maintenance / Gas Recharge</option>
+                <option data-en="Washing Machine" data-ar="غسالة ملابس">Washing Machine</option>
+                <option data-en="Spinner / Dryer" data-ar="آلة عصر / مجفف">Spinner / Dryer</option>
+                <option data-en="Water Pump" data-ar="مضخة مياه">Water Pump</option>
+                <option data-en="Fan / Desert Cooler" data-ar="مروحة / مبرد هواء">Fan / Desert Cooler</option>
+                <option data-en="Oven / Stove" data-ar="فرن /موقد">Oven / Stove</option>
+                <option data-en="Dishwasher" data-ar="غسالة أطباق">Dishwasher</option>
+                <option data-en="Emergency — 2hr Response" data-ar="طارئ — استجابة خلال ساعتين">Emergency — 2hr Response</option>
+                <option data-en="Other" data-ar="أخرى">Other</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+          <div class="fg">
+            <label data-en="Your Area in Riyadh" data-ar="حيك في الرياض">Your Area in Riyadh</label>
+            <div class="select-wrap">
+              <select id="f-area">
+                <option value="" data-en="Select your area..." data-ar="اختر منطقتك...">Select your area...</option>
+                <option value="Ar Rimal" data-en="Ar Rimal" data-ar="الرمال">Ar Rimal</option>
+                <option value="Al Yarmuk" data-en="Al Yarmuk" data-ar="اليرموك">Al Yarmuk</option>
+                <option value="Al Munsiyah" data-en="Al Munsiyah" data-ar="المنسية">Al Munsiyah</option>
+                <option value="Al Janadriyyah" data-en="Al Janadriyyah" data-ar="الجنادرية">Al Janadriyyah</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+          </div>
+          <div class="fg"><label data-en="Describe the Problem" data-ar="صف المشكلة">Describe the
+              Problem</label><textarea id="f-msg" placeholder="e.g. AC not cooling, makes loud noise when starting..."
+              data-ph-en="e.g. AC not cooling, makes noise..."
+              data-ph-ar="مثال: المكيف لا يبرد، يصدر صوتاً..."></textarea></div>
+          <button class="btn-submit" onclick="submitForm()"><i class="fa-solid fa-paper-plane"></i> <span
+              data-en="SEND REQUEST" data-ar="إرسال الطلب">SEND REQUEST</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <a href="#" class="logo-wrap">
+        <div class="logo-mark"><i class="fa-solid fa-snowflake"></i></div>
+        <div>
+          <div class="logo-name" data-en="Bilal Tabreed" data-ar="تبريد بلال">Bilal Tabreed</div>
+          <span class="logo-tagline" data-en="COOLING & APPLIANCE REPAIR · RIYADH"
+            data-ar="تبريد وإصلاح أجهزة · الرياض">COOLING &amp; APPLIANCE REPAIR · RIYADH</span>
+        </div>
+      </a>
+      <ul class="f-links">
+        <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+        <li><a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
+        <li><a href="#process" data-en="How It Works" data-ar="كيف نعمل">How It Works</a></li>
+        <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+      </ul>
+    </div>
+    <hr class="footer-line">
+    <p class="footer-copy" data-en="© 2025 Bilal Tabreed, Riyadh, Saudi Arabia. All rights reserved."
+      data-ar="© ٢٠٢٥ خدمات البلال للتبريد والأجهزة، الرياض، المملكة العربية السعودية. جميع الحقوق محفوظة.">© 2025 Bilal
+      Tabreed, Riyadh, Saudi Arabia. All rights reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-prev" onclick="lbNav(-1,event)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lb-next" onclick="lbNav(1,event)"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lb-inner" onclick="event.stopPropagation()">
+      <img id="lbImg" src="" alt="">
+      <p id="lbCaption" class="lb-caption"></p>
+      <p id="lbDesc" class="lb-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    let lang = 'en';
+    function setLang(l) {
+      lang = l; const ar = l === 'ar';
+      document.body.classList.toggle('ar', ar);
+      document.documentElement.setAttribute('dir', ar ? 'rtl' : 'ltr');
+      document.getElementById('btnEN').classList.toggle('on', !ar);
+      document.getElementById('btnAR').classList.toggle('on', ar);
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const txt = el.getAttribute('data-' + l); if (!txt) return;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = el.getAttribute('data-ph-' + l) || txt; }
+        else { el.innerHTML = txt; }
+      });
+      document.querySelectorAll('select option[data-en]').forEach(o => { o.textContent = o.getAttribute('data-' + l); });
+    }
+
+    /* ── THEME ── */
+    let isLight = localStorage.getItem('theme') === 'light';
+    function applyTheme() {
+      document.body.classList.toggle('light', isLight);
+      document.querySelectorAll('.theme-toggle i').forEach(icon => {
+        icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      });
+    }
+    function toggleTheme() {
+      isLight = !isLight;
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      applyTheme();
+    }
+    applyTheme();
+    let mOpen = false;
+    function toggleMobile() { mOpen = !mOpen; document.getElementById('mobileMenu').classList.toggle('open', mOpen); }
+    function closeMobile() { mOpen = false; document.getElementById('mobileMenu').classList.remove('open'); }
+    document.addEventListener('click', e => { if (!e.target.closest('#nav') && !e.target.closest('#mobileMenu')) closeMobile(); });
+    function submitForm() {
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const svc = document.getElementById('f-svc').value;
+      const area = document.getElementById('f-area').value;
+      const msg = document.getElementById('f-msg').value.trim();
+      if (!name || !phone) { alert(lang === 'ar' ? 'يرجى ملء الاسم ورقم الهاتف' : 'Please enter your name and phone number.'); return; }
+      const text = `🔧 *New Service Request — Al-Bilal*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Service:* ${svc}\n*Area:* ${area || '—'}\n*Problem:* ${msg || '—'}`;
+      window.open(`https://wa.me/966563837128?text=${encodeURIComponent(text)}`, '_blank');
+    }
+    /* ── SERVICES TOGGLE ── */
+    let svcExpanded = false;
+    function toggleServices() {
+      svcExpanded = !svcExpanded;
+      const hidden = document.querySelectorAll('.svc-hidden');
+      const btn = document.getElementById('svcToggleBtn');
+      const btnText = document.getElementById('svcBtnText');
+      const count = document.getElementById('svcCount');
+      const icon = document.getElementById('svcBtnIcon');
+
+      if (svcExpanded) {
+        hidden.forEach((el, i) => {
+          el.classList.add('svc-visible');
+          el.style.animationDelay = (i * 0.08) + 's';
+          // Trigger scroll reveal for newly shown cards
+          el.classList.add('visible');
+        });
+        btn.classList.add('open');
+        btnText.setAttribute('data-en', 'Show Less');
+        btnText.setAttribute('data-ar', 'عرض أقل');
+        btnText.textContent = lang === 'ar' ? 'عرض أقل' : 'Show Less';
+        count.classList.add('hidden');
+      } else {
+        hidden.forEach(el => {
+          el.classList.remove('svc-visible');
+          el.style.animationDelay = '';
+        });
+        btn.classList.remove('open');
+        btnText.setAttribute('data-en', 'View All Services');
+        btnText.setAttribute('data-ar', 'عرض كل الخدمات');
+        btnText.textContent = lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services';
+        count.classList.remove('hidden');
+        // Scroll back to services section smoothly
+        document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    /* ── GALLERY ── */
+    const galleryImgs = [
+      { src: 'assets/ac-service.png',            cap: 'AC Repair · Ar Rimal, Riyadh',            desc: 'Unit not cooling — refrigerant gas was low, leak sealed and system fully recharged.' },
+      { src: 'assets/ac-outdoor-repair.png',     cap: 'AC Maintenance · Al Yarmuk, Riyadh',      desc: 'Outdoor unit overheating — fan motor replaced and condenser coils deep cleaned.' },
+      { src: 'assets/fidge-repait.png',          cap: 'Freezer Repair · Al Munsiyah, Riyadh',    desc: 'Freezer not freezing — faulty thermostat diagnosed and replaced, door seal repaired.' },
+      { src: 'assets/washing-machine-repair.png',cap: 'Washing Machine · Al Janadriyyah, Riyadh',desc: 'Machine not draining — blocked pump filter cleared and worn drive belt replaced.' },
+      { src: 'assets/ac-outdoor-installation.png',cap: 'AC Installation · Ar Rimal, Riyadh',     desc: 'New split AC system — indoor and outdoor units installed, piped, wired and tested.' },
+      { src: 'assets/indoor-ac-installation.png',cap: 'Split AC Fix · Al Yarmuk, Riyadh',        desc: 'AC making loud noise — loose fan blade tightened, bearings lubricated and unit serviced.' },
+      { src: 'assets/freezer-gas-refill.png',    cap: 'Commercial Freezer · Al Munsiyah, Riyadh',desc: 'Freezer temperature rising — compressor serviced and refrigerant gas fully recharged.' },
+      { src: 'assets/machine-motor-repair.png',  cap: 'On-Site Work · Al Janadriyyah, Riyadh',   desc: 'Washing machine motor burnt out — motor replaced and rewired on-site.' },
+      { src: 'assets/ac-gas-refill.png',         cap: 'Gas Recharge · Ar Rimal, Riyadh',         desc: 'AC cooling weakly — low refrigerant detected, full gas recharge completed.' },
+      { src: 'assets/refrigerator-repair.png',   cap: 'Fridge Repair · Al Yarmuk, Riyadh',       desc: 'Fridge not cooling — dirty condenser coils cleaned and refrigerant level corrected.' },
+    ];
+    let lbIdx = 0;
+
+    function openLightbox(idx) {
+      lbIdx = idx;
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lbImg').src = galleryImgs[idx].src;
+      document.getElementById('lbCaption').textContent = galleryImgs[idx].cap;
+      document.getElementById('lbDesc').textContent = galleryImgs[idx].desc;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir, e) {
+      e.stopPropagation();
+      lbIdx = (lbIdx + dir + galleryImgs.length) % galleryImgs.length;
+      document.getElementById('lbImg').src = galleryImgs[lbIdx].src;
+      document.getElementById('lbCaption').textContent = galleryImgs[lbIdx].cap;
+      document.getElementById('lbDesc').textContent = galleryImgs[lbIdx].desc;
+    }
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1, { stopPropagation: () => { } });
+      if (e.key === 'ArrowLeft') lbNav(-1, { stopPropagation: () => { } });
+    });
+
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.gitem').forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
