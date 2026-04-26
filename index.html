@@ -1315,6 +1315,12 @@
       margin-bottom: 20px;
     }
 
+    .f-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
     .f-phones {
       display: flex;
       flex-direction: column;
@@ -3260,17 +3266,19 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
-      <a href="#" class="logo-wrap">
-        <div class="logo-mark"><i class="fa-solid fa-snowflake"></i></div>
-        <div>
-          <div class="logo-name" data-en="Bilal Tabreed" data-ar="تبريد بلال">Bilal Tabreed</div>
-          <span class="logo-tagline" data-en="COOLING & APPLIANCE REPAIR · RIYADH"
-            data-ar="تبريد وإصلاح أجهزة · الرياض">COOLING &amp; APPLIANCE REPAIR · RIYADH</span>
+      <div class="f-brand">
+        <a href="#" class="logo-wrap">
+          <div class="logo-mark"><i class="fa-solid fa-snowflake"></i></div>
+          <div>
+            <div class="logo-name" data-en="Bilal Tabreed" data-ar="تبريد بلال">Bilal Tabreed</div>
+            <span class="logo-tagline" data-en="COOLING & APPLIANCE REPAIR · RIYADH"
+              data-ar="تبريد وإصلاح أجهزة · الرياض">COOLING &amp; APPLIANCE REPAIR · RIYADH</span>
+          </div>
+        </a>
+        <div class="f-phones">
+          <a href="tel:+966563837128" class="f-phone"><i class="fa-solid fa-phone"></i> +966 56 383 7128</a>
+          <a href="https://wa.me/966563837128" class="f-phone" target="_blank"><i class="fa-brands fa-whatsapp"></i> +966 56 383 7128</a>
         </div>
-      </a>
-      <div class="f-phones">
-        <a href="tel:+966563837128" class="f-phone"><i class="fa-solid fa-phone"></i> +966 56 383 7128</a>
-        <a href="tel:+966563837128" class="f-phone"><i class="fa-brands fa-whatsapp"></i> +966 56 383 7128</a>
       </div>
       <ul class="f-links">
         <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
