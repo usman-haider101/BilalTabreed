@@ -1315,10 +1315,62 @@
       margin-bottom: 20px;
     }
 
+    .f-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .f-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .f-phone i { color: var(--cyan); font-size: 14px; }
+    .f-phone:hover { color: var(--cyan); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .footer-copy {
       font-size: 12px;
       color: var(--footer-copy);
-      text-align: center;
+    }
+
+    .f-socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .f-social {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--footer-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .f-social:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0,212,255,0.07);
     }
 
     /* WhatsApp FAB */
@@ -2099,7 +2151,8 @@
 
     @media(max-width:900px) {
       .hero-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
       }
 
       .hero-right {
@@ -2173,16 +2226,25 @@
 
       .hero-right {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-top: 28px;
+        gap: 8px;
+        margin-top: 0;
       }
 
       .hcard {
-        padding: 16px 14px;
+        padding: 12px 10px;
+      }
+
+      .hcard-icon {
+        font-size: 18px;
+        margin-bottom: 8px;
       }
 
       .hcard-num {
-        font-size: 30px;
+        font-size: 24px;
+      }
+
+      .hcard-lbl {
+        font-size: 10px;
       }
 
       .hcard.span2 {
@@ -2327,6 +2389,16 @@
     }
 
     @media(max-width:480px) {
+
+      /* HERO — full stack on tiny phones */
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-right {
+        margin-top: 4px;
+      }
 
       /* NAV */
       #nav {
@@ -3196,6 +3268,10 @@
             data-ar="تبريد وإصلاح أجهزة · الرياض">COOLING &amp; APPLIANCE REPAIR · RIYADH</span>
         </div>
       </a>
+      <div class="f-phones">
+        <a href="tel:+966563837128" class="f-phone"><i class="fa-solid fa-phone"></i> +966 56 383 7128</a>
+        <a href="tel:+966563837128" class="f-phone"><i class="fa-brands fa-whatsapp"></i> +966 56 383 7128</a>
+      </div>
       <ul class="f-links">
         <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
         <li><a href="#why" data-en="Why Us" data-ar="لماذا نحن">Why Us</a></li>
@@ -3204,9 +3280,17 @@
       </ul>
     </div>
     <hr class="footer-line">
-    <p class="footer-copy" data-en="© 2025 Bilal Tabreed, Riyadh, Saudi Arabia. All rights reserved."
-      data-ar="© ٢٠٢٥ خدمات البلال للتبريد والأجهزة، الرياض، المملكة العربية السعودية. جميع الحقوق محفوظة.">© 2025 Bilal
-      Tabreed, Riyadh, Saudi Arabia. All rights reserved.</p>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-en="© 2025 Bilal Tabreed, Riyadh, Saudi Arabia. All rights reserved."
+        data-ar="© ٢٠٢٥ خدمات البلال للتبريد والأجهزة، الرياض، المملكة العربية السعودية. جميع الحقوق محفوظة.">© 2025 Bilal
+        Tabreed, Riyadh, Saudi Arabia. All rights reserved.</p>
+      <div class="f-socials">
+        <a href="#" class="f-social" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="f-social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="f-social" aria-label="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="f-social" aria-label="Snapchat" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+      </div>
+    </div>
   </footer>
 
   <!-- LIGHTBOX -->
